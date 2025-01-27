@@ -38,6 +38,8 @@ class NCAADataPipeline:
             
         return data_files
     
+    #used before any division operations for feature engineering
+    #if division can be performed, then it returns the quotient , else 0
     def safe_ratio(self, a, b):
         if b == 0:
             return 0
@@ -46,7 +48,7 @@ class NCAADataPipeline:
     def calculate_regular_season_stats(self, regular_season_df: pd.DataFrame, season: int) -> pd.DataFrame:
         """Calculate team statistics using ONLY regular season games."""
         try:
-            total_teams = regular_season_df['WTeamID'].nunique() + regular_season_df['LTeamID'].nunique()
+            total_teams = regular_season_df['WTeamID'].nunique() + regular_season_df['LTeamID'].nunique() #all teams , no overlapping
             self.logger.info(f"Processing {total_teams} unique teams for season {season}")
 
             season_games = regular_season_df[regular_season_df['Season'] == season].copy()

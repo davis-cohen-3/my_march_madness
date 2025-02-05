@@ -1,1 +1,9 @@
-./data/raw/mens/MMasseyOrdinals_thruSeason2024_day128git.csv
+venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+data/raw/mens/*.csv
+data/features/*.csv
+data/processed/*.csv
+

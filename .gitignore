@@ -4,6 +4,8 @@ __pycache__/
 *.pyc
 .env
 .DS_Store
+*.csv
+*.pkl
 data/raw/mens/*.csv
 data/features/*.csv
 data/processed/*.csv
